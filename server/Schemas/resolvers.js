@@ -1,6 +1,6 @@
 
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Book } = require('../models');
+const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,11 +9,11 @@ const resolvers = {
       me: async (parent, args, context) => {
         
         if (context.user) {
-          const user = await User.findOne({ _id: context.user._id })
+          const userData = await User.findOne({ _id: context.user._id })
           .select(['-__v -password'])
 
-          if (!user) throw new AuthenticationError(`No Data Returned: ${context.user._id}`)
-          return user;
+          if (!userData) throw new AuthenticationError(`No Data Returned: ${context.user._id}`)
+          return userData;
         }
 
         throw new AuthenticationError('Not logged in!')
@@ -31,14 +31,8 @@ const resolvers = {
     },
 
     Mutation: {
-            
-      addUser: async (parent, args) => {
-        const user = await User.create(args);
-        const token = signToken(user);
-          return {token, user };
-      },    
-      
-      login: async (parent, { email, password }) => {
+
+        login: async (parent, { email, password }) => {
         
         const user = await User.findOne({ email });
   
@@ -58,13 +52,21 @@ const resolvers = {
 
         return {token, user} ;
       },
+            
+      addUser: async (parent, args) => {
+        const user = await User.create(args);
+        const token = signToken(user);
+          return { token, user };
+      },    
+      
+    
 
       saveBook: async (parent, { input }, context) => {
         if (context.user) {
           const user = await User.findByIdAndUpdate(
             { _id: context.user._id },
             { $push: { savedBooks: input } },
-            { new: true }
+            { new: true, runValidators: true }
           );
   
           return user;
