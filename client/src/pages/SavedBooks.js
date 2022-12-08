@@ -9,15 +9,12 @@ import {QUERY_ME} from '../utils/queries';
 import {REMOVE_BOOK} from '../utils/mutations';
 
 const SavedBooks = () => {
-  let userData = useQuery(QUERY_ME);
-  // mutation with refetch queries so that when the mutation is called we update the page state
-  const [removeBook] = useMutation(REMOVE_BOOK, {
-    refetchQueries: () => [{
-      query: QUERY_ME
-    }]
-  });
+  const { loading, data } = useQuery(QUERY_ME);
+  let userData = data?.me || {};
+  console.log(userData);
+  const [removeBook] = useMutation(REMOVE_BOOK);
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
+  // function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -26,14 +23,13 @@ const SavedBooks = () => {
     }
 
     try {
-      const { data } = await removeBook ({
-        variables: { bookId }
-      })
+      const { user } = await removeBook({
+        variables: {
+          bookId: bookId,
+        },
+      });
 
-      if (!data) {
-        throw new Error('something went wrong!');
-      }
-      // upon success, remove book's id from localStorage
+      userData = user;
       removeBookId(bookId);
     } catch (err) {
       console.error(err);
@@ -41,9 +37,10 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (userData.loading) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
+
 
   return (
     <>
