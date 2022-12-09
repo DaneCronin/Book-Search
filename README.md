@@ -17,7 +17,8 @@
   ## Installation
   *Steps required to install project and how to get application running*
   
-  Start by installing front and backend dependencies. While in this directory, run the following command:
+  Start by installing front and backend dependencies from the command line in the root directory. While in this directory, run the following command:
+  
   npm install or npm i
   
   This should install the necessary node modules within the server and the client folders.
@@ -31,6 +32,12 @@
 
   ## Usage
   *Instructions and examples for use:*
+  
+  The application is deployed and may be used here: https://enigmatic-spire-25907.herokuapp.com/
+  
+  Users can search and view books by title or author. Users can then signup and login to save their favorite books to a saved list, and also delete the books at a later date if they wish. 
+  
+  ![Screenshot 2022-12-08 at 19-04-53 Google Book Search](https://user-images.githubusercontent.com/107944830/206606865-f3669fea-51f0-4b7c-8487-f790d79c10a6.png)
 
 
 
