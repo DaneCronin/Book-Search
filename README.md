@@ -45,7 +45,7 @@
   ## Usage
   *Instructions and examples for use:*
   
-  The application is deployed and may be used [HERE:](https://enigmatic-spire-25907.herokuapp.com/)
+  The application is deployed and may be used [HERE:](https://stormy-ridge-01724.herokuapp.com/)
   
   Users can search and view books by title or author. Users can then signup and login to save their favorite books to a saved list, and also delete the books at a later date if they wish. 
   
