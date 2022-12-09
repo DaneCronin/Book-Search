@@ -17,17 +17,29 @@
   ## Installation
   *Steps required to install project and how to get application running*
   
-  Start by installing front and backend dependencies from the command line in the root directory. While in this directory, run the following command:
+  Clone this repo to your local machine and start by installing front and backend dependencies from the command line in the root directory. While in this directory, run the following command:
   
-  npm install or npm i
+ ###  `npm install or npm i`
   
   This should install the necessary node modules within the server and the client folders.
   After both installations complete, run the following command in your terminal:
 
-  npm start
+### `npm start` or `npm run develop`
 
   
   Your app should now be running on http://localhost:3000. The Express server should intercept any AJAX requests from the client.
+
+## Technologies Used
+ 
+ * JavaScript
+ * Node.JS
+ * React
+ * HTML
+ * ApolloServer
+ * GraphQL
+ * MongoDB
+ * Express
+ * React-Router-DOM
 
 
   ## Usage
