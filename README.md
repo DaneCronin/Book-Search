@@ -17,20 +17,39 @@
   ## Installation
   *Steps required to install project and how to get application running*
   
-  Start by installing front and backend dependencies. While in this directory, run the following command:
-  npm install or npm i
+  Clone this repo to your local machine and start by installing front and backend dependencies from the command line in the root directory. While in this directory, run the following command:
+  
+ ###  `npm install or npm i`
   
   This should install the necessary node modules within the server and the client folders.
   After both installations complete, run the following command in your terminal:
 
-  npm start
+### `npm start` or `npm run develop`
 
   
   Your app should now be running on http://localhost:3000. The Express server should intercept any AJAX requests from the client.
 
+## Technologies Used
+ 
+ * JavaScript
+ * Node.JS
+ * React
+ * HTML
+ * ApolloServer
+ * GraphQL
+ * MongoDB
+ * Express
+ * React-Router-DOM
+
 
   ## Usage
   *Instructions and examples for use:*
+  
+  The application is deployed and may be used here: https://enigmatic-spire-25907.herokuapp.com/
+  
+  Users can search and view books by title or author. Users can then signup and login to save their favorite books to a saved list, and also delete the books at a later date if they wish. 
+  
+  ![Screenshot 2022-12-08 at 19-04-53 Google Book Search](https://user-images.githubusercontent.com/107944830/206606865-f3669fea-51f0-4b7c-8487-f790d79c10a6.png)
 
 
 
