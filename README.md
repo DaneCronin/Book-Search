@@ -18,17 +18,26 @@
   *Steps required to install project and how to get application running*
   
   Start by installing front and backend dependencies. While in this directory, run the following command:
+  npm install or npm i
+  
+  This should install the necessary node modules within the server and the client folders.
+  After both installations complete, run the following command in your terminal:
+
+  npm start
+
+  
+  Your app should now be running on http://localhost:3000. The Express server should intercept any AJAX requests from the client.
+
 
   ## Usage
   *Instructions and examples for use:*
 
-  This should install node modules within the server and the client folder.
+
 
   ## Contributing
-  *Please follow these guidelines if you would like to contribute:*
+  *Please follow these guidelines if you would like to contribute:*  Not seeking contributions at this time.
 
-  Your app should now be running on http://localhost:3000. The Express server should intercept any AJAX requests from the client.
-
+  
   ## Tests
   *Tests for application and how to run them:*
 
