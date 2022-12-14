@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 //connect to DB using either MONGODB_URI or local host url 
-mongoose.set('debug', true);
-mongoose.set('strictQuery', true);
+// mongoose.set('debug', true);
+// mongoose.set('strictQuery', true);
 
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/book-search', {
